@@ -56,7 +56,7 @@ def power():
     base = eval(input("Enter base:"))
     exponent = eval(input("Enter exponent:"))
     my_total = 1
-    for i in range(exponent):
+    for _ in range(exponent):
         my_total = my_total * base
     print(base, "^", exponent, "=", my_total)
 
