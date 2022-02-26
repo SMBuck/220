@@ -1,13 +1,14 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: <Sam Marshall Buck>
+<hw6>.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: <This assignment had us work on another string method. It also had us work on
+functions and how they work.>
 
 Certification of Authenticity:
 <include one of the following>
 I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
+I certify that this assignment is my own work, but I discussed it with: Bradly
 """
 import math
 
@@ -25,7 +26,7 @@ def encode():
         secret = ord(letter)
         secret_enc = secret + key
         uncovered_enc = chr(secret_enc)
-        print(uncovered_enc, end=" ")
+        print(uncovered_enc, end="")
 
 
 def sphere_area(radius):
@@ -56,15 +57,19 @@ def sum_n_cubes(number):
 def encode_better():
     message = input("enter a message: ")
     key = input("enter a key: ")
-    # for letters in message:
-    #     secrets_1 = ord(letters.upper())
-    #     secrets_2 = ord(letters)
-    #     cipher_1 = (secrets_1 % 32) - 1 # upper case letter changed to 0-25 for ace
-    #     cipher_2 = (secrets_2 % 32) + 31
-    #     cipher_shift = cipher_2 + cipher_1
-    #     cipher_new = chr(cipher_shift)
-    #     print(cipher_2, end=" ")
-    print(cipher_change)
+    length = len(message)
+    length_2 = len(key)
+    for i in range(length):
+        letters = message[i]
+        cipher = i % length_2
+        cipher_message = key[cipher]
+        encrypt_1 = ord(letters) - 65
+        encrypt_2 = ord(cipher_message) - 65
+        full_encrypt = encrypt_1 + encrypt_2
+        unknown = (full_encrypt % 58) + 65
+        discovered = chr(unknown)
+        print(discovered, end="")
+
 
 
 
@@ -75,7 +80,7 @@ def encode_better():
 
 if __name__ == '__main__':
     # cash_converter()
-    encode()
+    # encode()
     # res = sphere_area(13)
     # print(res)
     # res = sphere_volume(13)
