@@ -74,11 +74,21 @@ def send_safe_message(file_name, friend_name, key):
     for letters in message:
         encrypt = encryption.encode(letters, key)
         words = words + encrypt
-        print(encrypt, file=output_file)
+        print(words, file=output_file)
 
 
 def send_uncrackable_message(file_name, friend_name, pad_file_name):
-
+    first_file = open(file_name, "r")
+    content = first_file.readlines()
+    second_file = open(pad_file_name, "r")
+    key_content = second_file.read()
+    friend_file = friend_name + ".txt"
+    output_file = open(friend_file, "w")
+    words = ""
+    for letters in content:
+        encrypt = encryption.encode_better(letters, key_content)
+        words = words + encrypt
+        print(words, file=output_file)
 
 
 if __name__ == '__main__':
