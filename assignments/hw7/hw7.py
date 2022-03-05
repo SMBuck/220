@@ -2,7 +2,8 @@
 Name: <Sam Marshall Buck>
 <hw7>.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: <This assignment was difficult to say the least, we had to use files and combine
+them with encryption to get the desired outputs.>
 
 Certification of Authenticity:
 <include one of the following>
