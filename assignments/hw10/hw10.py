@@ -48,25 +48,6 @@ def syracuse(n):
 
 
 def goldbach(n):
-    # my_list = []
-    # prime_1 = int(n / 2)
-    # prime_2 = int(n / 2)
-    # if n % 2 != 0:
-    #     return None
-    # elif prime_1 % 2 == 0:
-    #     prime_1 += 1
-    #     my_list.append(prime_1)
-    #     if prime_1 % 2 == 0:
-    #         my_list.remove(prime_1)
-    #         prime_1 += 1
-    #         my_list.append(prime_1)
-    # elif prime_2 % 2 == 0:
-    #     prime_2 -= 1
-    #     my_list.append(prime_1)
-    #     if prime_2 % 2 == 0:
-    #         prime_2 -= 1
-    #         my_list = my_list + [prime_2]
-    # return my_list
     my_list = []
     my_prime_list = []
     if n % 2 != 0:
