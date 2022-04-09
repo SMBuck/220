@@ -1,3 +1,13 @@
+""" hw10.py
+<Sam Marshall Buck>
+
+< we had to utilize while loops instead of a for loop to iterate through certain sequences.>
+
+I certify that this was my own work.
+
+"""
+
+
 def fibonacci(n):
     fib_list = []
     first = 0
@@ -59,6 +69,8 @@ def goldbach(n):
     # return my_list
     my_list = []
     my_prime_list = []
+    if n % 2 != 0:
+        return None
     i = 0
     while i < n:
         i += 1
@@ -69,13 +81,12 @@ def goldbach(n):
     my_prime_list.append(my_list[0])
     if diff in my_list:
         my_prime_list.append(diff)
-    elif n % 2 != 0:
-        return None
     return my_prime_list
 
 
 if __name__ == "__main__":
+    pass
     # print(fibonacci(9))
     # print(double_investment(10000, .05))
     # print(syracuse(5))
-    print(goldbach(10))
+    # print(goldbach(8))
