@@ -38,28 +38,44 @@ def syracuse(n):
 
 
 def goldbach(n):
+    # my_list = []
+    # prime_1 = int(n / 2)
+    # prime_2 = int(n / 2)
+    # if n % 2 != 0:
+    #     return None
+    # elif prime_1 % 2 == 0:
+    #     prime_1 += 1
+    #     my_list.append(prime_1)
+    #     if prime_1 % 2 == 0:
+    #         my_list.remove(prime_1)
+    #         prime_1 += 1
+    #         my_list.append(prime_1)
+    # elif prime_2 % 2 == 0:
+    #     prime_2 -= 1
+    #     my_list.append(prime_1)
+    #     if prime_2 % 2 == 0:
+    #         prime_2 -= 1
+    #         my_list = my_list + [prime_2]
+    # return my_list
     my_list = []
-    if n % 2 != 0:
+    my_prime_list = []
+    i = 0
+    while i < n:
+        i += 1
+        my_list.append(i)
+        if n % i == 0 or i % 2 == 0:
+            my_list.remove(i)
+    diff = n - my_list[0]
+    my_prime_list.append(my_list[0])
+    if diff in my_list:
+        my_prime_list.append(diff)
+    elif n % 2 != 0:
         return None
-    elif n % 2 == 0:
-        prime_1 = int(n / 2) + 1
-        prime_2 = int(n / 2) - 1
-        if prime_1 % 2 != 0:
-            my_list.append(prime_1)
-        else:
-            my_list.append(prime_1 + 1)
-        if prime_2 % 2 != 0:
-            my_list.append(prime_2)
-        else:
-            my_list.append(prime_2 - 1)
-    return my_list
-        # if prime_1 != 0 and prime_2 != 0:
-
-
+    return my_prime_list
 
 
 if __name__ == "__main__":
     # print(fibonacci(9))
     # print(double_investment(10000, .05))
     # print(syracuse(5))
-    print(goldbach(3614))
+    print(goldbach(10))
