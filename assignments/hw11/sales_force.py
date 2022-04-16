@@ -34,7 +34,19 @@ class SalesForce:
         return sales
 
     def top_seller(self):
-        pass
+        my_list = []
+        for i in range(len(self.sales_people)):
+            employee = self.sales_people[i]
+            person = []
+            sale_id = SalesPerson.get_id(employee)
+            person.append(int(sale_id))
+            name = SalesPerson.get_name(employee)
+            person.append(name)
+            total_sales = float(SalesPerson.total_sales(employee))
+            person.append(total_sales)
+            if SalesPerson.compare_to(employee, total_sales) == 0 or 1:
+                my_list.append(employee)
+        return my_list
 
     def individual_sales(self, employee_id):
         if employee_id in self.sales_people:
