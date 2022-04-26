@@ -24,8 +24,11 @@ if __name__ == '__main__':
     rectangles = [Rectangle(Point(5, 6), Point(7, 8)), Rectangle(Point(1, 3), Point(2, 4))]
     rect_sort(rectangles)
     print(rectangles)
-    file_name = "data_sorted.txt"
+    file_name = "trades.txt"
     print(read_data(file_name))
     values = read_data(file_name)
     search_val = 111
     print(is_in_linear(search_val, values))
+    print(is_in_binary(search_val, values))
+
+
